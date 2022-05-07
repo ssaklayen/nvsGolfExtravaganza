@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -10,9 +11,9 @@ let Golfer = require("./golfer.model");
 Golfer.createIndexes();
 
 async function dbConnect() {
-  const dbName = "nvsgolfDB";
-  // const adminName = 'smokesaksllc';
-  // const adminPassword = 'PuffTuff$420';
+  const dbName = process.env.DB_NAME;
+  // const adminName = process.env.DB_ADMIN_NAME;
+  // const adminPassword = process.env.DB_ADMIN_PASS;
   // const dbURI = `mongodb+srv://${adminName}:${adminPassword}@cluster0.cq4yw.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
   const dbURI = `mongodb://localhost:27017/${dbName}`;
