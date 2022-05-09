@@ -1,3 +1,15 @@
 .navlogoCustom {
   margin-right: 10px;
 }
+
+div.customCard {
+  width: 18rem;
+}
+
+.customCard h3 {
+  text-align: center;
+}
+
+/* .customCard table {
+  margin: 5px;
+} */

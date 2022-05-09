@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { Component } from "react";
 
 export default class AddGolfer extends Component {
@@ -26,14 +27,12 @@ export default class AddGolfer extends Component {
     this.setState({
       golfer_handicap: e.target.value,
     });
-    console.log(this.state.golfer_handicap);
   }
 
   onChangeGolferTeam(e) {
     this.setState({
       golfer_team: e.target.value,
     });
-    console.log(this.state.golfer_team);
   }
 
   onSubmit(e) {
@@ -44,6 +43,15 @@ export default class AddGolfer extends Component {
     console.log(` Golfer Handicap : ${this.state.golfer_handicap}`);
     console.log(` Golfer Team     : ${this.state.golfer_team}`);
 
+    const newGolfer = {
+        golfer_name: this.state.golfer_name,
+        golfer_handicap: this.state.golfer_handicap,
+        golfer_team: this.state.golfer_team
+    }
+
+    axios.post("http://localhost:5000/golfers/add", newGolfer)
+    .then(res => console.log(res.data));
+
     this.setState({
       golfer_name: "",
       golfer_handicap: "",
@@ -53,7 +61,7 @@ export default class AddGolfer extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: 10 }}>
+      <div className="container-fluid">
         <form className="row g-3" onSubmit={this.onSubmit}>
           <div className="col-auto">
             <input

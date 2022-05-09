@@ -52,7 +52,6 @@ function main() {
 
   golferRoutes.route("/add").post((req, res) => {
     let newGolfer = new Golfer(req.body);
-    console.log(req.body);
     newGolfer.save()
     .then(golfer => {
       res.status(200).json({"golfer": "Golfer added successfully"});
