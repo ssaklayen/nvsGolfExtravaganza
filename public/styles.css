@@ -7,9 +7,14 @@ div.customCard {
 }
 
 .customCard h3 {
+  cursor: default;
   text-align: center;
 }
 
-/* .customCard table {
-  margin: 5px;
-} */
+.customCard th {
+  cursor: default;
+}
+
+.customCard td {
+  cursor: pointer;
+}

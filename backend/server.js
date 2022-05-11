@@ -67,7 +67,7 @@ function main() {
         res.status(404).send("Golfer not found");
       else
         golfer.golfer_name = req.body.golfer_name;
-        golfer.golfer_handicap = req.body.golfer_handicap;
+        golfer.golfer_hdc = req.body.golfer_hdc;
         golfer.golfer_team = req.body.golfer_team;
 
         golfer.save()

@@ -6,13 +6,13 @@ export default class AddGolfer extends Component {
     super(props);
 
     this.onChangeGolferName = this.onChangeGolferName.bind(this);
-    this.onChangeGolferHandicap = this.onChangeGolferHandicap.bind(this);
+    this.onChangeGolferHdc = this.onChangeGolferHdc.bind(this);
     this.onChangeGolferTeam = this.onChangeGolferTeam.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       golfer_name: "",
-      golfer_handicap: "",
+      golfer_hdc: "",
       golfer_team: "",
     };
   }
@@ -23,9 +23,9 @@ export default class AddGolfer extends Component {
     });
   }
 
-  onChangeGolferHandicap(e) {
+  onChangeGolferHdc(e) {
     this.setState({
-      golfer_handicap: e.target.value,
+      golfer_hdc: e.target.value,
     });
   }
 
@@ -40,12 +40,12 @@ export default class AddGolfer extends Component {
 
     console.log(`Golfer Added!`);
     console.log(` Golfer Name     : ${this.state.golfer_name}`);
-    console.log(` Golfer Handicap : ${this.state.golfer_handicap}`);
+    console.log(` Golfer Handicap : ${this.state.golfer_hdc}`);
     console.log(` Golfer Team     : ${this.state.golfer_team}`);
 
     const newGolfer = {
         golfer_name: this.state.golfer_name,
-        golfer_handicap: this.state.golfer_handicap,
+        golfer_hdc: this.state.golfer_hdc,
         golfer_team: this.state.golfer_team
     }
 
@@ -54,7 +54,7 @@ export default class AddGolfer extends Component {
 
     this.setState({
       golfer_name: "",
-      golfer_handicap: "",
+      golfer_hdc: "",
       golfer_team: "",
     });
   }
@@ -76,8 +76,8 @@ export default class AddGolfer extends Component {
             <input
               type="number"
               className="form-control"
-              value={this.state.golfer_handicap}
-              onChange={this.onChangeGolferHandicap}
+              value={this.state.golfer_hdc}
+              onChange={this.onChangeGolferHdc}
               placeholder="HC"
               min="0"
               max="50"

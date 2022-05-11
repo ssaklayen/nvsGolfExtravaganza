@@ -5,7 +5,7 @@ const GolferSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  golfer_handicap: {
+  golfer_hdc: {
     type: Number,
     required: true,
   },
